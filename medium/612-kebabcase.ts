@@ -4,4 +4,6 @@ type KebabCase<S extends string> = S extends `${infer S1}${infer S2}`
   ? `${Uncapitalize<S1>}${KebabCase<S2>}`
   : `${Uncapitalize<S1>}-${KebabCase<S2>}`
   : S;
-  type one = KebabCase<'foo-bar'>
+
+type one = KebabCase<'FooBarBaz'>
+type two = KebabCase<'fooBarBaz'>
